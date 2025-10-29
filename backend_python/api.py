@@ -47,8 +47,8 @@ def extract_data_from_pdf(filepath):
                 fonte_alerta = True
 
             banco = re.search(r'Banco:\s*(\d+)', bloco)
-            agencia = re.search(r'AG:\s*([\d\-]+)', bloco)
-            conta = re.search(r'CC:\s*([\d\-]+)', bloco)
+            agencia = re.search(r'AG:\s*([\dXx\-]+)', bloco)
+            conta = re.search(r'CC:\s*([\dXx\-]+)', bloco)
 
             parte_util = bloco.split("Banco:")[0]
             valores = re.findall(r'(\d{1,3}(?:\.\d{3})*,\d{2})', parte_util)
